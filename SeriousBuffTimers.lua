@@ -23,3 +23,8 @@ function SecondsToTimeAbbrev(time)
         return string.format("%d.%02dhr", hr, m);
     end
 end
+
+hooksecurefunc("AuraButton_Update", function(self, index)
+		local button = _G[self..index]
+		if (button and not button.styled) then applySkin(button) end
+end)
